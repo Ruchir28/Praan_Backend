@@ -20,6 +20,7 @@
   "dependencies": {
     "@types/mongoose": "^5.10.5",
     "express": "^4.17.1",
-    "mongoose": "^5.12.11"
+    "mongoose": "^5.12.11",
+    "uuid": "^8.3.2"
   }
 }
