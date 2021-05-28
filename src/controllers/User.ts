@@ -9,7 +9,7 @@ let jwt = require('jsonwebtoken');
 let expressJwt = require('express-jwt');
 
 
-
+//Used to register the user 
 module.exports.registerUser = async (req:express.Request,res:express.Response) => {
 
     let User : IUserDocument = await UserRepository.registerUser(req.body.name,req.body.email,req.body.password);
@@ -21,6 +21,8 @@ module.exports.registerUser = async (req:express.Request,res:express.Response) =
 
 }
 
+// populate the user's data in req.profile using the userid param so that it can be matched with 
+// decryted token's for authentication  
 module.exports.getUserById = async (req:any,res:express.Response,next:express.NextFunction)=>{
 
     const User : IUserDocument | null = await UserRepository.getUserById(req.params.userid);
@@ -34,6 +36,8 @@ module.exports.getUserById = async (req:any,res:express.Response,next:express.Ne
     next();
 }
 
+//used to sign in user check the credentials 
+//if correct then return the token to the user
 module.exports.signinUser = async (req:express.Request,res:express.Response)=>{
 
     const User : IUserDocument | null = await UserRepository.authenticateUser(req.body.email,req.body.password);
@@ -53,12 +57,18 @@ module.exports.signinUser = async (req:express.Request,res:express.Response)=>{
 
 }
 
-
+//used to decrypt the token 
+//and populate auth property in req i.e(req.auth) which contains the user info
+//which was encrypted and saved in the token
 module.exports.isSignedIn = expressJwt({
     secret: "extricator28",
     userProperty: "auth",
     algorithms: ['HS256']
 });
+
+//used to match the user's id populated by decrypted token and also the usedID
+//to add a layer of authntication
+
 
 module.exports.isAuthenticated = function (req:any, res:express.Response, next:express.NextFunction) {
     //req.profile will be set up by the frontend part

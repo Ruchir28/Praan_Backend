@@ -43,7 +43,7 @@
  ![picture 5](images/94bc3ba98ee2b72a7a273569bde7066b81a95b3fb21e78e758f3ae876ff05d19.png)  
  
 
- 5)localhost:5000/reading/getdevicedata/60b07acd956e511e6033a839
+ 5) localhost:5000/reading/getdevicedata/60b07acd956e511e6033a839
 
  -> Post Request .\
  -> Requires user authentication so userID is their in params and authentication token is also set.    

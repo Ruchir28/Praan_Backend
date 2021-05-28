@@ -6,6 +6,9 @@ let DeviceRepository = new DeviceRepo();
 
 module.exports.registerDevice = async (req:express.Request,res:express.Response) => {
 
+    // used to register the device to the backend
+    
+    //All the operations of db are done through repository
     let Device : IDeviceDocument | null = await DeviceRepository.createDevice(req.body.name);
 
     if(!Device){
