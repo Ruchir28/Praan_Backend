@@ -1,4 +1,6 @@
 import express from 'express';
+
+
 const bodyparser=require('body-parser');
 
 
@@ -13,37 +15,22 @@ db.once('open',function()
 });
 
 
-//NOTE: CHECKING IMPORTS OPEN
-import {ReadingModel,IReadingDocument} from './models/Reading';
-import {IDeviceDocument,DeviceModel} from './models/Device';
-//CHECKING IMPORTS CLOSED
 
 
+//creating an express application
 const app : express.Application = express();
 
-const add = (a:number,b:number) : number =>{
-    return a+b;
-}
 
 
+//Midlleware used to parse json data 
 app.use(bodyparser.json());
 
-
-app.get('/',async (req:express.Request,res:express.Response)=>{
-
-    
-    const Reading : IReadingDocument[] =  await ReadingModel.find({t: {
-        $gte: "2021-03-27T08:17:53.640Z",
-        $lte: "2021-05-27T08:17:53.640Z"
-    }});
-    console.log(Reading);
-    res.send('<h1>Typescript Server</h1>');
-});
 
 app.use('/user',require('./routes/User'));
 app.use('/device',require('./routes/device'));
 app.use('/reading',require('./routes/reading'));
-                                 
+
+//server listening on port 5000
 app.listen(5000,()=>{
-    console.log("server up and running",add(5,6));
+    console.log("server up and running");
 })

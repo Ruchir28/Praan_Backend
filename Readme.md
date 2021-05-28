@@ -5,7 +5,7 @@
 # Different Routes and their usecase  
 ## 1) localhost:5000/user/register    
      -> Post Request 
-     -> To Register the user who is authorised to    send or receive data.
+     -> To Register the user who is authorised to send or receive data.
  ![picture 1](images/1bad6c0cc5d001de1adf07ddbd66573b8e6ccc7c1b021501d9845be152a3659f.png)  
 
 ## 2) localhost:5000/user/signin     

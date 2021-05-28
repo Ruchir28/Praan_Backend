@@ -2,6 +2,9 @@ import express from 'express';
 const UserContoller = require('../controllers/User');
 const Router = express.Router();
 
+
+//Routes for users
+
 Router.get('/',(req:express.Request,res:express.Response)=>{
     return res.send('<h1>On Device Page</h1>');
 })
