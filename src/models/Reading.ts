@@ -14,12 +14,14 @@ enum direction{
     N='N',
     S='S',
     SE='SE',
-    NE='NE'
+    NE='NE',
+    E='E',
+    W='W'
 }
-
+//chnaged t to string
 export interface IReading{
     device : mongoose.Types.ObjectId | IDeviceDocument,
-    t : mongoose.Schema.Types.Date,
+    t : string,
     w : number,
     h : direction,
     p1:number,
@@ -27,7 +29,7 @@ export interface IReading{
     p10:number
 }
 
-export interface IReadingDocument extends IReading{
+export interface IReadingDocument extends IReading,mongoose.Document{
 
 }
 
@@ -50,7 +52,7 @@ const ReadingSchema  = new mongoose.Schema<IReadingDocument,IReadingModel>({
     },
     h:{
         type:String,
-        enum:['SW','NW','N','S','NE','SE']
+        enum:['SW','NW','N','S','NE','SE','E','W']
     },
     p1:{
         type:Number,    
