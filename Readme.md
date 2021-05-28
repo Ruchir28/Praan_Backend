@@ -2,13 +2,13 @@
 1) Get the Repository on your system to run the code
 2) to start the server navigate to project folder in the terminal and run 'npm run dev' command
 
-## Different URL'S on the project 
- 1) localhost:5000/user/register    \
+# Different URL'S on the project 
+## 1) localhost:5000/user/register    \
    ->post Request \
    -> To Register the user who is authorised to    send or receive data.
  ![picture 1](images/1bad6c0cc5d001de1adf07ddbd66573b8e6ccc7c1b021501d9845be152a3659f.png)  
 
-2) localhost:5000/user/signin     \
+## 2) localhost:5000/user/signin     \
  ->post Request \
  -> User will signin using this route and will also 
     get the authentication token which will be used to authenticate the user's each request.
@@ -16,7 +16,8 @@
     image of data  \
    ![picture 2](images/04514ebca3ae657badebbd045157809e58924e509d6ad4ce643c5807b76abb1c.png)
 
-3) localhost:5000/device/register/60b07acd956e511e6033a839
+## 3) localhost:5000/device/register/:userid
+    -> localhost:5000/device/register/60b07acd956e511e6033a839
     ->post Request \
     -> This url is used to register a device 
      the user who is registering this device 
@@ -30,8 +31,8 @@
      header also contain an authorization field 
      which will be used to authenticate the user
 
-  4)  localhost:5000/reading/bulkupload/60b07acd956e511e6033a839
-
+ ##  4)  localhost:5000/reading/bulkupload/:userid
+  -> localhost:5000/reading/bulkupload/60b07acd956e511e6033a839  .\
   -> post Request \
   -> Also requires authenticated user so user id  is given  in the params and 
     token is also set in the header. \
@@ -43,8 +44,8 @@
  ![picture 5](images/94bc3ba98ee2b72a7a273569bde7066b81a95b3fb21e78e758f3ae876ff05d19.png)  
  
 
- 5) localhost:5000/reading/getdevicedata/60b07acd956e511e6033a839
-
+ ## 5) localhost:5000/reading/getdevicedata/:userid
+ -> localhost:5000/reading/getdevicedata/60b07acd956e511e6033a839  .\
  -> Post Request .\
  -> Requires user authentication so userID is their in params and authentication token is also set.    
  -> Can be used to get data from different devices

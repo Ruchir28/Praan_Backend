@@ -49,7 +49,6 @@ const UserSchema =  new mongoose.Schema<IUserDocument,IUserModel>({
 
 
 //a virtual field password will be used to set salt and encry_passowrd
-
 // using secure password function user's password in encrypted using salt 
 // and stored in as encry_password
 
