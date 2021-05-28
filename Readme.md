@@ -3,12 +3,12 @@
 2) to start the server navigate to project folder in the terminal and run 'npm run dev' command
 
 # Different URL'S on the project 
-## 1) localhost:5000/user/register    \
+## 1) localhost:5000/user/register    
    ->post Request \
    -> To Register the user who is authorised to    send or receive data.
  ![picture 1](images/1bad6c0cc5d001de1adf07ddbd66573b8e6ccc7c1b021501d9845be152a3659f.png)  
 
-## 2) localhost:5000/user/signin     \
+## 2) localhost:5000/user/signin     
  ->post Request \
  -> User will signin using this route and will also 
     get the authentication token which will be used to authenticate the user's each request.
