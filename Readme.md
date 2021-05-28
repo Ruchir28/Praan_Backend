@@ -2,7 +2,7 @@
 1) Get the Repository on your system to run the code
 2) to start the server navigate to project folder in the terminal and run 'npm run dev' command
 
-# Different URL'S on the project 
+# Different Routes and their usecase  
 ## 1) localhost:5000/user/register    
      -> Post Request 
      -> To Register the user who is authorised to    send or receive data.
