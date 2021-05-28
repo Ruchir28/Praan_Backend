@@ -4,12 +4,12 @@
 
 # Different URL'S on the project 
 ## 1) localhost:5000/user/register    
-     ->post Request 
+     -> Post Request 
      -> To Register the user who is authorised to    send or receive data.
  ![picture 1](images/1bad6c0cc5d001de1adf07ddbd66573b8e6ccc7c1b021501d9845be152a3659f.png)  
 
 ## 2) localhost:5000/user/signin     
-     ->post Request 
+     -> Post Request 
      -> User will signin using this route and will also 
        get the authentication token which will be used to authenticate the user's each request.
    
@@ -18,7 +18,7 @@
 
 ## 3) localhost:5000/device/register/:userid
     -> localhost:5000/device/register/60b07acd956e511e6033a839
-    -> post Request 
+    -> Post Request 
     -> This url is used to register a device 
        the user who is registering this device 
        their user id will also be passed as a parameter
@@ -33,9 +33,9 @@
 
  ##  4)  localhost:5000/reading/bulkupload/:userid
      -> localhost:5000/reading/bulkupload/60b07acd956e511e6033a839  
-     -> post Request 
+     -> Post Request 
      -> Also requires authenticated user so user id  is given  in the params and 
-      token is also set in the header. 
+        token is also set in the header. 
      -> Bulk Insert Operation using a csv  
      -> Will take csv as a input and insert the reading from different devices at once. 
      -> Will return the row's no which contain irrevelant data i.e unregisterd device name,wrong date format etc. 
@@ -48,13 +48,19 @@
      -> Post Request 
      -> Requires user authentication so userID is their in params and authentication token is also set.    
      -> Can be used to get data from different devices
-     and choice of data can be given
-     such as 
-     1) which fields to extract p10,p25 etc.
-     2) array of devices 
-     3) time range given as gt and lt 
+        and choice of data can be given
+        such as 
+          1) which fields to extract p10,p25 etc.
+          2) array of devices 
+          3) time range given as gt and lt 
      Data should be given in same format given  
    ![picture 6](images/be1217a90d62f094072744be4bf3f0b4798def180fb471b859e5a01a49a1fdef.png)  
  
+## 6) localhost:5000/reading/getdata/:userid
+     -> Get All Readings in a time range
+     -> Post Request
+     -> Requires user authentication so userID is their in params and authentication token is also set.    
+     -> Data sent in form
+   ![picture 7](images/a0832b2a77b8990c9fbef83884ad456294adc765fd7ea0d64b462c9e7eed263c.png)  
 
 
